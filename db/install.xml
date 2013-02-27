@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/migrationup/db" VERSION="20130225" COMMENT="XMLDB file for Moodle blocks/migrationup"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_migrationup" COMMENT="Default comment for block_migrationup, please edit me" NEXT="block_migrationup_courses">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="newcourseid"/>
+        <FIELD NAME="newcourseid" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="oldcourseid"/>
+        <FIELD NAME="oldcourseid" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="newcourseid" NEXT="userdata"/>
+        <FIELD NAME="userdata" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="oldcourseid" NEXT="migrated"/>
+        <FIELD NAME="migrated" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="userdata"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="block_migrationup_courses" COMMENT="Default comment for the table, please edit me" PREVIOUS="block_migrationup">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="username"/>
+        <FIELD NAME="username" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" PREVIOUS="courseid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
