@@ -2,24 +2,29 @@
 require_once("{$CFG->libdir}/formslib.php");
 
 class migration_form extends moodleform {
-	
+
 	//Regular Expression for old course URL
 	private $regexurl = '/^(http|https):\/\/moodle.uni-potsdam.de\/course\/view.php\?id=[0-9]+/';
 	
 	function definition() {
-		
+		global $OUTPUT;
 		$mform =& $this->_form;
 		$mform->addElement('header','displayinfo', get_string('form_caption', 'block_migrationup'));
-		$mform->addElement('html', get_string('form_request', 'block_migrationup'));
 		
-		$paragraph = '<p>'.get_string('form_request_urlhelp1', 'block_migrationup').' <a href="https://moodle.uni-potsdam.de">';
+		$paragraph = '<p>'.get_string('form_request1', 'block_migrationup'). ' <a href="https://moodle.uni-potsdam.de" target="_blank">';
+		$paragraph .= get_string('oldmoodle', 'block_migrationup').'</a> '.get_string('form_request2', 'block_migrationup').'<br />';
+		$paragraph .= get_string('form_request_urlhelp1', 'block_migrationup').' <a href="https://moodle.uni-potsdam.de" target="_blank">';
 		$paragraph .= get_string('oldmoodle', 'block_migrationup').'</a> '.get_string('form_request_urlhelp2', 'block_migrationup').'</p>';
 		
 		$urlhelppic = new moodle_url('/blocks/migrationup/pix/urlhelp.png');
 		$urlhelp = html_writer::tag('img', '', array('src' => $urlhelppic, 'alt' => get_string('url_help_pic','block_migrationup'), 'class' => 'url'));
 		
-		$paragraph .= '<p>'.$urlhelp.'<br />'.get_string('form_request_urlhelp3', 'block_migrationup').'<br />'.get_string('form_request_urlhelp4', 'block_migrationup').'</p>';
+		$paragraph .= '<p>'.$urlhelp.'</p>';
+		
+		$listitems = array(get_string('form_request_listitem1', 'block_migrationup'), get_string('form_request_listitem2', 'block_migrationup'), get_string('form_request_listitem3', 'block_migrationup'));
+		$paragraph .=html_writer::alist($listitems, null, 'ol');
 		$mform->addElement('html',$paragraph);
+		
 		
 		// Input for URL
 		$mform->addElement('text', 'oldcourseurl', get_string('url', 'block_migrationup'), array('size' => '50'));

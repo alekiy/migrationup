@@ -18,7 +18,11 @@ $string['finished'] = 'Ihre Kursübertragung wurde abgeschlossen. Bitte überpr�
 /* Block - Help
  -------------------------------*/
 $string['course'] = 'Kurse';
-$string['course_help'] = 'Wir unterschieden zwischen <i>einfachen</i>, <i>komplexen</i> und <i>Kursen mit Benutzerdaten</i>.<br /> Die Kursübertragung bietet sich vor allem für <i>komplexe</i> und <i>Kurse mit Benutzerdaten</i> an.<p />Sollte Ihr Kurs nur wenige Aktivitäten aufweisen und Sie die zeitlichen Möglichkeiten besitzen sind Sie auf der sicheren Seite den Kurs neu anzulegen.';
+$string['course_help'] = 'Wir unterschieden zwischen <i>einfachen</i>, <i>komplexen</i> und <i>Kursen mit Teilnehmer(innen)-Inhalten-</i>.<br />
+<ul><li>Ein <b><i>einfacher</i></b> Kurs enthält im wesentlichen Themenblöcke, Texte und Überschriften, Dokumente und einfache Aktivitäten. Einfache Kurse können Sie auch selber übertragen.</li>
+<li>Ein <b><i>komplexer</i></b> enthält zum Beispiel Tests, nutzt Fragensammlungen, Bewertungsskalen, Wikis und oder Gruppenfunktionen.</li>
+<li>Ein <b><i>Kurs mit Teilnehmer(innen)-Daten</i></b> ist ein Kurs, in dem die Teilnehmenden in Foren, Glossaren, Wikis etc. Inhalte eingegeben haben, die Sie in jedem Fall übertragen wollen. Das ist zum Beispiel der Fall, wenn ein Moodle-Kurs für die Projektorganisation oder den Austausch in einer Arbeitsgruppe genutzt wird.</li>
+</ul>Die Kursübertragung durch das Moodle-Team bietet sich vor allem für <b><u>komplexe</u></b> und <b><u>Kurse mit Teilnehmer(innen)-Daten</u></b> an.<p />';
 
 /* Settings
  -------------------------------*/
@@ -33,18 +37,19 @@ $string['configdestdir'] = 'Mehr Text';
 -------------------------------*/
 $string['form_heading'] = 'Kursübertragungsformular';
 $string['form_caption'] = 'Übertragungsformular für Kurse von Moodle zu Moodle2.UP';
-$string['form_request'] = 'Bitte geben Sie hier die Webadresse (URL) des zu  übertragenen Kurses in der Form (<b>https://moodle.uni-potsdam.de/course/view.php?id=6527</b>)
-ein.';
+$string['form_request1'] = 'Bitte geben Sie hier die Webadresse (URL) des Kurses im';
+$string['form_request2'] ='ein, den Sie in diesen Kurs wiederherstellen lassen möchten.';
 
-$string['form_request_urlhelp1'] = 'Die URL oder auch Webadresse genannt erhalten Sie indem Sie Ihren Kurs im';
-$string['oldmoodle'] = 'Moodle';
-$string['form_request_urlhelp2'] = 'in der Adresszeile Ihres Browsers auswählen und kopieren.';
-$string['form_request_urlhelp3'] = '(<b>Kopieren</b>: Zum Kopieren gehen Sie in die Adresszeile und markieren diese, klicken mit der <i>Maus rechts</i> und gehen anschließend auf <b><i>kopieren</i></b>. Alternativ erreichen Sie dies auch indem Sie in die Adresszeile klicken und die Tastenkombination <b>STRG+A</b> und anschließend <b>STRG+C</b> drücken.)';
-$string['form_request_urlhelp4'] = '(<b>Einfügen</b>: Gehen Sie nun in das Feld: "Alte-Kurs-URL" und drücken hier die Tastenkombination <b>STRG+V</b> oder klicken mit der Maus rechts in das Feld und wählen dort <b>einfügen</b>.)';
+$string['form_request_urlhelp1'] = 'Die URL erhalten Sie indem Sie Ihren Kurs im';
+$string['oldmoodle'] = 'alten Moodle';
+$string['form_request_urlhelp2'] = 'aufrufen (in einem neuen Browser-Fenster) und die URL dann in der Adresszeile Ihres Browsers markieren und kopieren.';
+$string['form_request_listitem1'] = '<u>Markieren:</u> Zum Markieren klicken Sie in die Adresszeile und klicken dann entweder wiederholt, bis die gesamte URL markiert ist oder drücken Sie die Tastenkombination STRG+A.';
+$string['form_request_listitem2'] = '<u>Kopieren:</u> Klicken Sie mit der Maus rechts auf den vorher markierten Text und gehen auf Kopieren oder drücken Sie die nach der erfolgreichen Markierung die Tastenkombination STRG+C ';
+$string['form_request_listitem3'] = '<u>Einfügen:</u> Gehen Sie nun in das Feld: "Alte-Kurs-URL" und drücken hier die Tastenkombination STRG+V oder klicken mit der Maus rechts in das Feld und wählen dort Einfügen.';
 
 $string['url_help_pic'] = 'URL-Hilfebild';
 $string['url'] = 'Alte Kurs-URL:';
-$string['userdata'] = 'Benutzerdaten übernehmen<br />(Glossareinträge, Forenbeiträge ...)';
+$string['userdata'] = 'Teilnehmer(innen)-Daten übernehmen <br />(Glossareinträge, Forenbeiträge ...)';
 $string['submit'] ='Übertragung beantragen';
 
 /* Formular - Submit - Errors
@@ -54,8 +59,8 @@ $string['form_validurl'] = 'Dies ist keine gültige Moodleadresse. Sie sollte de
 
 /* Formular - Help
 -------------------------------*/
-$string['url_help'] = 'Die URL (Webadresse / Adresse) Ihrer alten Kurse sieht für gewöhnlich aus wie:<br />https://moodle.uni-potsdam.de/course/view.php?id=4.<p /><b>Wichtig ist, dass Sie auf eine Zahl.</b>';
-$string['userdata_help'] = 'Benutzerdaten beinhalten nicht nur eingeschriebene Nutzer, sondern auch die von ihnen produzierten Artefakte. Hierzu gehören Foreneinträge, Glossarbeiträge, Aufgabeneinreichungen uvm..<br />Benötigen Sie diese Daten <b>nicht</b>, da Sie nur die Kursstruktur benötigen, so lassen Sie dieses Feld frei.';
+$string['url_help'] = 'Die URL (Webadresse / Adresse) Ihrer alten Kurse sieht für gewöhnlich aus wie:<br />https://moodle.uni-potsdam.de/course/view.php?id=4.<p /><b>Wichtig ist, dass die URL auf eine Zahl.</b>';
+$string['userdata_help'] = 'Benutzerdaten beinhalten nicht nur eingeschriebenen Teilnehmer(innen), sondern auch die von ihnen produzierten Inhalte und Artefakte. Hierzu gehören Foreneinträge, Glossarbeiträge, Aufgabeneinreichungen uvm..<p /><b>Benötigen Sie diese Daten nicht, da Sie nur die Kursstruktur wiederherstellen möchten, so lassen Sie dieses Feld frei.</b>';
 
 /* DB - Form Errors
 -------------------------------*/
