@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="blocks/migrationup/db" VERSION="20130225" COMMENT="XMLDB file for Moodle blocks/migrationup"
+<XMLDB PATH="blocks/migrationup/db" VERSION="20130306" COMMENT="XMLDB file for Moodle blocks/migrationup"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
@@ -10,7 +10,8 @@
         <FIELD NAME="newcourseid" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="oldcourseid"/>
         <FIELD NAME="oldcourseid" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false" PREVIOUS="newcourseid" NEXT="userdata"/>
         <FIELD NAME="userdata" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="oldcourseid" NEXT="migrated"/>
-        <FIELD NAME="migrated" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="userdata"/>
+        <FIELD NAME="migrated" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="userdata" NEXT="requestermail"/>
+        <FIELD NAME="requestermail" TYPE="text" NOTNULL="true" SEQUENCE="false" PREVIOUS="migrated"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>

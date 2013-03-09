@@ -10,10 +10,10 @@ $string['status'] = 'Migrationsstatus';
 $string['block_start1'] = 'Sie wollen einen Kurs ';
 $string['block_start2'] = 'übertragen lassen?';
 $string['block_link_form'] = 'Zum Antrag';
-$string['help'] = 'Bei Fragen wenden Sie sich bitte an <a href="mailto:alekiy@uni-potsdam.de">moodle-team@uni-potsdam.de</a> oder telefonisch an 0331-977-4357.';
-$string['help_withouthtml'] = "Bei Fragen wenden Sie sich bitte an moodle-team@uni-potsdam.de\noder telefonisch an 0331-977-4357.";
-$string['progress']= 'Ihre Kursübertragung wird bearbeitet. Das Moodle-Team meldet sich bei Ihnen sobald die Aufgaben erledigt sind.';
-$string['finished'] = 'Ihre Kursübertragung wurde abgeschlossen. Bitte überprüfen Sie den Kurs und die Aktivitäten. Sollte etwas fehlen oder nicht wie gewünscht funktionieren wenden Sie sich bitte an <a href="mailto:alekiy@uni-potsdam.de">moodle-team@uni-potsdam.de</a> oder telefonisch an 0331-977-4357.';
+$string['help'] = 'Bei Fragen wenden Sie sich bitte an <a href="mailto:moodle-team@uni-potsdam.de">moodle-team@uni-potsdam.de</a> oder telefonisch an 0331-977-4357.';
+$string['help_withouthtml'] = "Bei Fragen wenden Sie sich bitte an\nmoodle-team@uni-potsdam.de oder telefonisch an 0331-977-4357.";
+$string['progress']= 'Ihre Kursübertragung wird bearbeitet. Das Moodle-Team meldet sich bei Ihnen, sobald die Aufgaben erledigt sind.';
+$string['finished'] = 'Ihre Kursübertragung wurde abgeschlossen. Bitte überprüfen Sie den Kurs und die Aktivitäten. Sollte etwas fehlen oder nicht wie gewünscht funktionieren, wenden Sie sich bitte an <a href="mailto:moodle-team@uni-potsdam.de">moodle-team@uni-potsdam.de</a> oder telefonisch an 0331-977-4357.';
 
 /* Block - Help
  -------------------------------*/
@@ -59,7 +59,7 @@ $string['form_validurl'] = 'Dies ist keine gültige Moodleadresse. Sie sollte de
 
 /* Formular - Help
 -------------------------------*/
-$string['url_help'] = 'Die URL (Webadresse / Adresse) Ihrer alten Kurse sieht für gewöhnlich aus wie:<br />https://moodle.uni-potsdam.de/course/view.php?id=4.<p /><b>Wichtig ist, dass die URL auf eine Zahl.</b>';
+$string['url_help'] = 'Die URL (Webadresse / Adresse) Ihrer alten Kurse sieht für gewöhnlich aus wie:<br />https://moodle.uni-potsdam.de/course/view.php?id=4.<p /><b>Wichtig ist, dass die URL auf eine Zahl endet.</b>';
 $string['userdata_help'] = 'Benutzerdaten beinhalten nicht nur eingeschriebenen Teilnehmer(innen), sondern auch die von ihnen produzierten Inhalte und Artefakte. Hierzu gehören Foreneinträge, Glossarbeiträge, Aufgabeneinreichungen uvm..<p /><b>Benötigen Sie diese Daten nicht, da Sie nur die Kursstruktur wiederherstellen möchten, so lassen Sie dieses Feld frei.</b>';
 
 /* DB - Form Errors

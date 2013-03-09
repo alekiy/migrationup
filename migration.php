@@ -31,7 +31,10 @@ if (isset ($migrated) && $migrated == 'yes') {
 	$dataobject = $DB->get_record('block_migrationup', array('newcourseid' => $courseid));
 	$dataobject->migrated = '1';
 	$DB->update_record('block_migrationup', $dataobject);
-	// insert HERE Moving of Files
+	$email = $dataobject->requestermail;
+	// send EMail Confirmationto User
+	$msg = new message();
+	$msg->sendEmail("Sehr geehrte(r) Frau/Herr ".$USER->lastname.",\n\ndie Übertragung Ihres Kurses\n\"".$COURSE->fullname."\"\nnach Moodle 2.UP ist abgeschlossen.\n\nBitte überprüfen Sie den Kurs und die Aktivitäten.\nSollte etwas fehlen oder nicht wie gewünscht funktionieren,\nwenden Sie sich bitte an moodle-team@uni-potsdam.de\noder telefonisch an 0331-977-4357.\n\nMit freundlichen Grüßen,\nIhr ZEIK-, AG eLEARNING- & eLiS-Team\nder Universität Potsdam",$email);
 	redirect($courseurl);
 }
 
@@ -43,7 +46,7 @@ $mform->set_data($toform);
 
 
 if ($mform->is_cancelled()) {
-
+	redirect($courseurl);
 } else if ($fromform = $mform->get_data()) {
 
 	$url = $fromform->oldcourseurl;
@@ -53,6 +56,7 @@ if ($mform->is_cancelled()) {
 	$dataobject->newcourseid = $fromform->courseid;
 	preg_match('/(?<=id=)(.(?!&))*./', $url, $match);
 	$dataobject->oldcourseid = $match[0];
+	$dataobject->requestermail = $USER->email;
 	(isset ($fromform->userdata)) ? $dataobject->userdata = $fromform->userdata : $dataobject->userdata = '0';
 
 	// insert data into Database
@@ -70,7 +74,7 @@ if ($mform->is_cancelled()) {
 		$migrationmsg = 'ja';
 	}
 	$msg = new message();
-	$msg->sendMessage("Benutzername: $USER->username \nVorname: $USER->firstname \nNachname: $USER->lastname \nNeuer Kurs: https://moodle2.uni-potsdam.de/course/view.php?id=$dataobject->newcourseid \nAlter Kurs: $url \nMigration mit Benutzerdaten: $migrationmsg", $USER);
+	$msg->sendMessage("Benutzername: $USER->username \nVorname: $USER->firstname \nNachname: $USER->lastname \nAlter Kurs: $url \nNeuer Kurs: https://moodle2.uni-potsdam.de/course/view.php?id=$dataobject->newcourseid \nMigration mit Benutzerdaten: $migrationmsg", $USER);
 
 	redirect($courseurl);
 
